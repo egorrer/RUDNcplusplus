@@ -85,7 +85,7 @@ float fx2(float x) {
 }
 
 float flog(float x) {
-    return (log(x)-x);
+    return (log(x)+x);
 }
 
 // The list of functions can be continued...
@@ -131,7 +131,7 @@ int main()
 
     cout << "Choose the function from the list:\n 1 - sin (sine)\n 2 - cos (cosine)\n 3 - tg (tangent)\n 4 - ctg (cotangent)\n";
     cout << " 5 - arcsin (arcsine)\n 6 - arccos (arccosine)\n 7 - arctg (arctangent)\n 8 - arcctg (arccotangent)\n";
-    cout << " 9 - 1/x+x\n 10 - sqrt(x)-1 (square root)\n 11 - x^2-1 (x power 2) \n 12 - log(x)-x \n";
+    cout << " 9 - 1/x+x\n 10 - sqrt(x)-1 (square root)\n 11 - x^2-1 (x power 2) \n 12 - log(x)+x \n";
     cin >> funcName;
     cout << "Enter two float numbers:";
     cin >> x >> y;
