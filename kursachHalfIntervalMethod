@@ -3,8 +3,6 @@
 #define PI 3.14159265
 using namespace std;
 
-//Настроить периуд у Син и Кос надо!!!
-
 float halfIntervalMethod(float (*fName)(float), float a, float b, float accLevel)
 {
     float c, aVal, bVal, accVal;
@@ -102,19 +100,19 @@ float farcctg(float x){
 }
 
 float foneDx(float x) {
-    return (1/x);
+    return (1/x+x);
 }
 
 float fsquareroot(float x) {
-    return sqrt(x);
+    return (sqrt(x)-1);
 }
 
 float fx2(float x) {
-    return (pow(x,2));
+    return (pow(x,2)-1);
 }
 
 float flog(float x) {
-    return log(x);
+    return (log(x)-x);
 }
 
 // The list of functions can be continued...
@@ -129,7 +127,7 @@ int main()
 
     cout << "Choose the function from the list:\n 1 - sin (sine)\n 2 - cos (cosine)\n 3 - tg (tangent)\n 4 - ctg (cotangent)\n";
     cout << " 5 - arcsin (arcsine)\n 6 - arccos (arccosine)\n 7 - arctg (arctangent)\n 8 - arcctg (arccotangent)\n";
-    cout << " 9 - 1/x\n 10 - sqrt(x) (square root)\n 11 - x^2 (x power 2) \n 12 - log(x) \n";
+    cout << " 9 - 1/x+x\n 10 - sqrt(x)-1 (square root)\n 11 - x^2-1 (x power 2) \n 12 - log(x)-x \n";
     cin >> funcName;
     cout << "Enter two float numbers:";
     cin >> x >> y;
@@ -139,7 +137,7 @@ int main()
         cout << "\n Invalid accuracy level \n";
         return 0;
     }
-    //переделать на switch-case
+
     switch ( funcName ) {
     case 1:
         functionPointer = fsin;
@@ -187,4 +185,3 @@ int main()
     cout << "Output: " << z;
     return 0;
 }
-
