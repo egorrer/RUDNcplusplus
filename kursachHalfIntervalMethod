@@ -38,7 +38,7 @@ float halfIntervalMethod(float (*fName)(float), float a, float b, float accLevel
     }
 
 }
-
+// Searching for zero point
 float searchZero(float (*fPointer)(float), float negPoint, float posPoint, float accL, int counter)
 {
     float testValue, midPoint;
@@ -48,7 +48,7 @@ float searchZero(float (*fPointer)(float), float negPoint, float posPoint, float
     if(closeEnought(negPoint, posPoint, accL)){
         return midPoint;
     }
-// здесь работает указатель на функцию
+// Function pointer are working here
     testValue = fPointer(midPoint);
     cout << "Step " << counter << ": negPoint = " << negPoint << ", posPoint = " << posPoint << ", midPoint = " << midPoint << "\n";
     counter++;
@@ -67,6 +67,7 @@ bool closeEnought(float p, float q, float accLL){
     return 0;
 }
 
+//list of functions
 float fcos(float x){
     return cos(x);
 }
@@ -137,7 +138,8 @@ int main()
         cout << "\n Invalid accuracy level \n";
         return 0;
     }
-
+    
+    //list of functions
     switch ( funcName ) {
     case 1:
         functionPointer = fsin;
